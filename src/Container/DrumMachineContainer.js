@@ -24,28 +24,44 @@ class DrumMachineContainer extends Component{
   constructor(props){
     super(props);
     this.state={
-      clap: new Audio(clap),
-      clave: new Audio(clave),
-      closedHiHat: new Audio(closedHiHat),
-      cowbell: new Audio(cowbell),
-      cymbal: new Audio(cymbal),
-      highConga:new Audio(highConga),
-      highTom:new Audio(highTom),
-      kick: new Audio(kick),
-      lowConga: new Audio(lowConga),
-      lowTom: new Audio(lowTom),
-      midConga: new Audio(midConga),
-      midTom: new Audio(midTom),
-      openHiHat: new Audio(openHiHat),
-      rimShot: new Audio(rimShot),
-      shaker: new Audio(shaker),
-      snare: new Audio(snare)
-
+      clap: {name: "Clap",
+             sound: new Audio(clap)},
+      clave: {name: "Clave",
+             sound: new Audio(clave)},
+      closedHiHat: {name: "ClosedHiHat",
+             sound: new Audio(closedHiHat)},
+      cowbell: {name: "Cowbell",
+             sound: new Audio(cowbell)},
+      cymbal: {name: "Cymbal",
+             sound: new Audio(cymbal)},
+      highConga: {name: "HighConga",
+             sound: new Audio(highConga)},
+      highTom: {name: "HighTom",
+             sound: new Audio(highTom)},
+      kick: {name: "Kick",
+             sound: new Audio(kick)},
+      lowConga: {name: "LowConga",
+             sound: new Audio(lowConga)},
+      lowTom: {name: "LowTom",
+             sound: new Audio(lowTom)},
+      midConga: {name: "MidConga",
+             sound: new Audio(midConga)},
+      midTom: {name: "MidTom",
+             sound: new Audio(midTom)},
+      openHiHat: {name: "OpenHiHat",
+             sound: new Audio(openHiHat)},
+      rimShot: {name: "Rimshot",
+             sound: new Audio(rimShot)},
+      shaker: {name: "Shaker",
+             sound: new Audio(shaker)},
+      snare: {name: "Snare",
+             sound: new Audio(snare)}
     }
     this.playSound=this.playSound.bind(this);
   }
 
   playSound(audioSound){
+    audioSound.currentTime = 0
     return audioSound.play();
   }
 
@@ -54,6 +70,22 @@ class DrumMachineContainer extends Component{
       <div>
         <DrumMachineComponent sound={this.state.clap} playSound={this.playSound} />
         <DrumMachineComponent sound={this.state.clave} playSound={this.playSound} />
+        <DrumMachineComponent sound={this.state.closedHiHat} playSound={this.playSound} />
+        <DrumMachineComponent sound={this.state.cowbell} playSound={this.playSound} />
+        <DrumMachineComponent sound={this.state.cymbal} playSound={this.playSound} />
+        <DrumMachineComponent sound={this.state.highConga} playSound={this.playSound} />
+        <DrumMachineComponent sound={this.state.highTom} playSound={this.playSound} />
+        <DrumMachineComponent sound={this.state.kick} playSound={this.playSound} />
+        <DrumMachineComponent sound={this.state.lowConga} playSound={this.playSound} />
+        <DrumMachineComponent sound={this.state.lowTom} playSound={this.playSound} />
+        <DrumMachineComponent sound={this.state.midConga} playSound={this.playSound} />
+        <DrumMachineComponent sound={this.state.midTom} playSound={this.playSound} />
+        <DrumMachineComponent sound={this.state.openHiHat} playSound={this.playSound} />
+        <DrumMachineComponent sound={this.state.rimShot} playSound={this.playSound} />
+        <DrumMachineComponent sound={this.state.shaker} playSound={this.playSound} />
+        <DrumMachineComponent sound={this.state.snare} playSound={this.playSound} />
+
+
       </div>
     )
   }
