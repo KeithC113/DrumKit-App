@@ -24,42 +24,89 @@ class DrumMachineContainer extends Component{
 
   constructor(props){
     super(props);
-    this.state={
-      clap: {name: "Clap",
-             sound: new Audio(clap),
-             keyStroke: "w"},
-      clave: {name: "Clave",
-             sound: new Audio(clave),keyStroke: 82},
-      closedHiHat: {name: "ClosedHiHat",
-             sound: new Audio(closedHiHat),keyStroke: "4"},
-      cowbell: {name: "Cowbell",
-             sound: new Audio(cowbell),keyStroke: "e"},
-      cymbal: {name: "Cymbal",
-             sound: new Audio(cymbal),keyStroke: "q"},
-      highConga: {name: "HighConga",
-             sound: new Audio(highConga),keyStroke: "c"},
-      highTom: {name: "HighTom",
-             sound: new Audio(highTom),keyStroke: "d"},
-      kick: {name: "Kick",
-             sound: new Audio(kick),keyStroke: "1"},
-      lowConga: {name: "LowConga",
-             sound: new Audio(lowConga),keyStroke: "z"},
-      lowTom: {name: "LowTom",
-             sound: new Audio(lowTom),keyStroke: "a"},
-      midConga: {name: "MidConga",
-             sound: new Audio(midConga),keyStroke: "x"},
-      midTom: {name: "MidTom",
-             sound: new Audio(midTom),keyStroke: "s"},
-      openHiHat: {name: "OpenHiHat",
-             sound: new Audio(openHiHat),keyStroke: "3"},
-      rimShot: {name: "Rimshot",
-             sound: new Audio(rimShot),keyStroke: "f"},
-      shaker: {name: "Shaker",
-             sound: new Audio(shaker),keyStroke: "v"},
-      snare: {name: "Snare",
-             sound: new Audio(snare),keyStroke: "2"}
+    this.state = {
+      clap: {
+        name: "Clap",
+        sound: new Audio(clap),
+        keyStroke: 87
+      },
+      clave: {
+        name: "Clave",
+        sound: new Audio(clave),
+        keyStroke: 82
+      },
+      closedHiHat: {
+        name: "Closed Hi-Hat",
+        sound: new Audio(closedHiHat),
+        keyStroke: 52
+      },
+      cowbell: {
+        name: "Cowbell",
+        sound: new Audio(cowbell),
+        keyStroke: 69
+      },
+      cymbal: {
+        name: "Cymbal",
+        sound: new Audio(cymbal),
+        keyStroke: 81
+      },
+      highConga: {
+        name: "High Conga",
+        sound: new Audio(highConga),
+        keyStroke: 67
+      },
+      highTom: {
+        name: "High Tom",
+        sound: new Audio(highTom),
+        keyStroke: 68
+      },
+      kick: {
+        name: "Kick",
+        sound: new Audio(kick),
+        keyStroke: 49
+      },
+      lowConga: {
+        name: "Low Conga",
+        sound: new Audio(lowConga),
+        keyStroke: 90
+      },
+      lowTom: {
+        name: "Low Tom",
+        sound: new Audio(lowTom),
+        keyStroke: 65
+      },
+      midConga: {
+        name: "Mid Conga",
+        sound: new Audio(midConga),
+        keyStroke: 88
+      },
+      midTom: {
+        name: "Mid Tom",
+        sound: new Audio(midTom),
+        keyStroke: 83
+      },
+      openHiHat: {
+        name: "Open Hi-Hat",
+        sound: new Audio(openHiHat),
+        keyStroke: 51
+      },
+      rimShot: {
+        name: "Rimshot",
+        sound: new Audio(rimShot),
+        keyStroke: 70
+      },
+      shaker: {
+        name: "Shaker",
+        sound: new Audio(shaker),
+        keyStroke: 86
+      },
+      snare: {
+        name: "Snare",
+        sound: new Audio(snare),
+        keyStroke: 50
+      }
     }
-    this.playSound=this.playSound.bind(this);
+    this.playSound = this.playSound.bind(this);
   }
 
   playSound(audioSound){
@@ -86,7 +133,6 @@ class DrumMachineContainer extends Component{
         <DrumMachineComponent sound={this.state.midConga} playSound={this.playSound} />
         <DrumMachineComponent sound={this.state.highConga} playSound={this.playSound} />
         <DrumMachineComponent sound={this.state.shaker} playSound={this.playSound} />
-
       </div>
     )
   }

@@ -1,23 +1,40 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './DrumMachineComponent.css'
 
-const DrumMachineComponent = (props) => {
+class DrumMachineComponent extends Component {
 
-  const triggerSound =() => {
-      return props.playSound(props.sound.sound);
-}
-  const keySound =(event) => {
-    console.log(event);
-    if(event.type === 'click' || event.type==='keyDown'
-       ){
-      return props.playSound(props.sound.sound);
+  constructor(props){
+    super(props);
+    this.audioHandler = React.createRef();
+    this.triggerSound = this.triggerSound.bind(this);
+    this.keyTrigger = this.keyTrigger.bind(this);
   }
-}
-  return (
-    <div>
-      <button onKeyDown = {keySound} className = "DrumPadButton" onClick={triggerSound}>{props.sound.name} </button>
-    </div>
-  )
+
+  keyTrigger(event){
+      if(event.keyCode === this.props.sound.keyStroke) {
+        this.triggerSound();
+      }
+  }
+
+  componentDidMount(){
+    document.addEventListener("keydown", this.keyTrigger, false);
+  }
+
+  componentWillUnmount(){
+    document.removeEventListener("keydown", this.keyTrigger, false);
+  }
+
+  triggerSound(){
+    return this.props.playSound(this.props.sound.sound);
+  }
+
+  render(){
+    return (
+      <div>
+        <button className = "DrumPadButton" onClick={this.triggerSound}>{this.props.sound.name} </button>
+      </div>
+    )
+  }
 
 }
 
