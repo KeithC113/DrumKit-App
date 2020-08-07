@@ -1,4 +1,5 @@
 import React from 'react';
+import './DrumMachineComponent.css'
 
 const DrumMachineComponent = (props) => {
 
@@ -9,7 +10,7 @@ const DrumMachineComponent = (props) => {
 
   return (
     <div>
-      <button onClick={triggerSound}>{props.sound.name} </button>
+      <button className = "DrumPadButton" onClick={triggerSound}>{props.sound.name} </button>
     </div>
   )
 

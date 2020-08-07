@@ -1,0 +1,13 @@
+.DrumMachineContainer{
+  align-self: center;
+  width:45em;
+  border: 5px solid green;
+  padding: 25px;
+  align-items: center;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  justify-content: space-around;
+
+
+}

@@ -1,0 +1,21 @@
+.DrumPadButton{
+  display: flex;
+  flex-direction:row;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 4px 2px;
+  border-radius: 12px;
+  width:8em;
+  height:8em;
+}
+
+.DrumPadButton:active{
+    background-color: yellow;
+  }

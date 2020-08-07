@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import DrumMachineComponent from '../Components/DrumMachineComponent';
+import './DrumMachineContainer.css'
 
 import clap from '../Public/Clap.wav';
 import clave from '../Public/Clave.wav';
@@ -67,7 +68,7 @@ class DrumMachineContainer extends Component{
 
   render(){
     return (
-      <div>
+      <div className ="DrumMachineContainer">
         <DrumMachineComponent sound={this.state.clap} playSound={this.playSound} />
         <DrumMachineComponent sound={this.state.clave} playSound={this.playSound} />
         <DrumMachineComponent sound={this.state.closedHiHat} playSound={this.playSound} />
@@ -84,8 +85,6 @@ class DrumMachineContainer extends Component{
         <DrumMachineComponent sound={this.state.rimShot} playSound={this.playSound} />
         <DrumMachineComponent sound={this.state.shaker} playSound={this.playSound} />
         <DrumMachineComponent sound={this.state.snare} playSound={this.playSound} />
-
-
       </div>
     )
   }
