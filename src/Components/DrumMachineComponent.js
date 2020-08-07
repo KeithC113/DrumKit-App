@@ -5,7 +5,6 @@ class DrumMachineComponent extends Component {
 
   constructor(props){
     super(props);
-    this.audioHandler = React.createRef();
     this.triggerSound = this.triggerSound.bind(this);
     this.keyTrigger = this.keyTrigger.bind(this);
   }
