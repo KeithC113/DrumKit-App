@@ -4,13 +4,18 @@ import './DrumMachineComponent.css'
 const DrumMachineComponent = (props) => {
 
   const triggerSound =() => {
-    return props.playSound(props.sound.sound);
-
+      return props.playSound(props.sound.sound);
+}
+  const keySound =(event) => {
+    console.log(event);
+    if(event.type === 'click' || event.type==='keyDown'
+       ){
+      return props.playSound(props.sound.sound);
   }
-
+}
   return (
     <div>
-      <button className = "DrumPadButton" onClick={triggerSound}>{props.sound.name} </button>
+      <button onKeyDown = {keySound} className = "DrumPadButton" onClick={triggerSound}>{props.sound.name} </button>
     </div>
   )
 
