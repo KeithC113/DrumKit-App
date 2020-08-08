@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import kick from '../Public/Kick.wav';
 
 const sequencePatterns = [1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0]
 
@@ -10,26 +9,19 @@ class SequencerContainer extends Component{
     this.state = {
       bpm: 120,
       patterns: sequencePatterns,
-      playing: false,
-      step: 0,
-      steps: 16,
-      kick: {
-        name: "Kick",
-        sound: new Audio(kick),
-        keyStroke: 49
-      }
+      playing: false
     }
 
   }
 
   play() {
-    const { bpm } = this.state
-
     this.setState(() => ({
       playing: true
     }))
 
-    this.interval = setInterval(() => {this.setState(state => ({step: state.step < state.steps - 1 ? state.step + 1 : 0}), () => {const next = this.state.patterns.map((pattern, index) => (pattern === 1 ? this.state.kick.sound.play() : null)).filter(x => x)})}, (60 * 1000) / this.state.bpm / 2)
+    this.interval = setInterval(() => {
+      this.state.patterns.map((pattern, index) => (pattern === 1 ? this.props.playSound() : null))
+    }, (60000 / this.state.bpm))
   }
 
   pause() {
@@ -53,7 +45,7 @@ class SequencerContainer extends Component{
                 else this.play()
               }}
             >
-              Play
+              Start
             </button>
       </div>
     )
