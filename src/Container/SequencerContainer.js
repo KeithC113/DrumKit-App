@@ -29,16 +29,6 @@ class SequencerContainer extends Component{
     this.activateButton16 = this.activateButton16.bind(this);
   }
 
-
-
-
-  // play() {
-  //   this.setState(() => ({
-  //     playing: true
-  //   }))
-  //   for (button of )
-  // }
-
   play(){
     this.setState({playing: true});
 
@@ -60,13 +50,6 @@ class SequencerContainer extends Component{
       );
     }
   }
-
-  // pause() {
-  //   this.setState(() => ({
-  //     playing: false
-  //   }))
-  //   clearInterval(this.interval)
-  // }
 
   pause(){
     this.setState({playing: false})

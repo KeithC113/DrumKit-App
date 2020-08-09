@@ -28,6 +28,10 @@ class DrumMachineComponent extends Component {
     return this.props.playSound(this.props.sound.sound);
   }
 
+  playAll(){
+
+  }
+
   render(){
     return (
       <div>
