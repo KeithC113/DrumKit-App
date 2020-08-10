@@ -73,7 +73,8 @@ class DrumMachineContainer extends Component{
       lowTom: {
         name: "Low Tom",
         sound: new Audio(lowTom),
-        keyStroke: 65
+        keyStroke: 65,
+        selected: false
       },
       midConga: {
         name: "Mid Conga",

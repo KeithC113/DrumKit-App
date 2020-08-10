@@ -1,5 +1,10 @@
-.sequencer{
+.show-sequencer{
+  display: block;
   margin-bottom: 10px
+}
+
+.hide-sequencer{
+  display: none
 }
 
 .button-on {
