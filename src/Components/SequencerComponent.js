@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import "./SequencerComponent.css"
 
 let numSteps = 16;
 
@@ -287,27 +288,27 @@ class SequencerContainer extends Component{
     // })
 
     return(
-      <div>
+      <div className="sequencer">
 
 
-      <button onClick={this.activateButton1}>{this.state.pattern[0] === 1 ? "On" : "Off"}</button>
-      <button onClick={this.activateButton2}>{this.state.pattern[1] === 1 ? "On" : "Off"}</button>
-      <button onClick={this.activateButton3}>{this.state.pattern[2] === 1 ? "On" : "Off"}</button>
-      <button onClick={this.activateButton4}>{this.state.pattern[3] === 1 ? "On" : "Off"}</button>
-      <button onClick={this.activateButton5}>{this.state.pattern[4] === 1 ? "On" : "Off"}</button>
-      <button onClick={this.activateButton6}>{this.state.pattern[5] === 1 ? "On" : "Off"}</button>
-      <button onClick={this.activateButton7}>{this.state.pattern[6] === 1 ? "On" : "Off"}</button>
-      <button onClick={this.activateButton8}>{this.state.pattern[7] === 1 ? "On" : "Off"}</button>
-      <button onClick={this.activateButton9}>{this.state.pattern[8] === 1 ? "On" : "Off"}</button>
-      <button onClick={this.activateButton10}>{this.state.pattern[9] === 1 ? "On" : "Off"}</button>
-      <button onClick={this.activateButton11}>{this.state.pattern[10] === 1 ? "On" : "Off"}</button>
-      <button onClick={this.activateButton12}>{this.state.pattern[11] === 1 ? "On" : "Off"}</button>
-      <button onClick={this.activateButton13}>{this.state.pattern[12] === 1 ? "On" : "Off"}</button>
-      <button onClick={this.activateButton14}>{this.state.pattern[13] === 1 ? "On" : "Off"}</button>
-      <button onClick={this.activateButton15}>{this.state.pattern[14] === 1 ? "On" : "Off"}</button>
-      <button onClick={this.activateButton16}>{this.state.pattern[15] === 1 ? "On" : "Off"}</button>
+      <button className={this.state.pattern[0] === 1 ? "button-on" : "button-off"} onClick={this.activateButton1}>{this.state.pattern[0] === 1 ? "I" : "O"}</button>
+      <button className={this.state.pattern[1] === 1 ? "button-on" : "button-off"} onClick={this.activateButton2}>{this.state.pattern[1] === 1 ? "I" : "O"}</button>
+      <button className={this.state.pattern[2] === 1 ? "button-on" : "button-off"} onClick={this.activateButton3}>{this.state.pattern[2] === 1 ? "I" : "O"}</button>
+      <button className={this.state.pattern[3] === 1 ? "button-on" : "button-off"} onClick={this.activateButton4}>{this.state.pattern[3] === 1 ? "I" : "O"}</button>
+      <button className={this.state.pattern[4] === 1 ? "button-on" : "button-off"} onClick={this.activateButton5}>{this.state.pattern[4] === 1 ? "I" : "O"}</button>
+      <button className={this.state.pattern[5] === 1 ? "button-on" : "button-off"} onClick={this.activateButton6}>{this.state.pattern[5] === 1 ? "I" : "O"}</button>
+      <button className={this.state.pattern[6] === 1 ? "button-on" : "button-off"} onClick={this.activateButton7}>{this.state.pattern[6] === 1 ? "I" : "O"}</button>
+      <button className={this.state.pattern[7] === 1 ? "button-on" : "button-off"} onClick={this.activateButton8}>{this.state.pattern[7] === 1 ? "I" : "O"}</button>
+      <button className={this.state.pattern[8] === 1 ? "button-on" : "button-off"} onClick={this.activateButton9}>{this.state.pattern[8] === 1 ? "I" : "O"}</button>
+      <button className={this.state.pattern[9] === 1 ? "button-on" : "button-off"} onClick={this.activateButton10}>{this.state.pattern[9] === 1 ? "I" : "O"}</button>
+      <button className={this.state.pattern[10] === 1 ? "button-on" : "button-off"} onClick={this.activateButton11}>{this.state.pattern[10] === 1 ? "I" : "O"}</button>
+      <button className={this.state.pattern[11] === 1 ? "button-on" : "button-off"} onClick={this.activateButton12}>{this.state.pattern[11] === 1 ? "I" : "O"}</button>
+      <button className={this.state.pattern[12] === 1 ? "button-on" : "button-off"} onClick={this.activateButton13}>{this.state.pattern[12] === 1 ? "I" : "O"}</button>
+      <button className={this.state.pattern[13] === 1 ? "button-on" : "button-off"} onClick={this.activateButton14}>{this.state.pattern[13] === 1 ? "I" : "O"}</button>
+      <button className={this.state.pattern[14] === 1 ? "button-on" : "button-off"} onClick={this.activateButton15}>{this.state.pattern[14] === 1 ? "I" : "O"}</button>
+      <button className={this.state.pattern[15] === 1 ? "button-on" : "button-off"} onClick={this.activateButton16}>{this.state.pattern[15] === 1 ? "I" : "O"}</button>
 
-      <button onClick={this.clearAll}>Clear All</button>
+      <button className="clear-button" onClick={this.clearAll}>Clear</button>
 
       </div>
     )

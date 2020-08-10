@@ -143,7 +143,7 @@ class DrumMachineContainer extends Component{
         <DrumMachineComponent playing={this.state.playing} sound={this.state.highConga} playSound={this.playSound} />
         <DrumMachineComponent playing={this.state.playing} sound={this.state.shaker} playSound={this.playSound} />
         <div>
-        <button className="DrumPadButton" type="button" onClick={() => {
+        <button className="StartButton" type="button" onClick={() => {
                   if (this.state.playing) this.stopSequence()
                   else this.startSequence()
                 }}>
