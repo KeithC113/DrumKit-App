@@ -28,15 +28,11 @@ class DrumMachineComponent extends Component {
     return this.props.playSound(this.props.sound.sound);
   }
 
-  playAll(){
-
-  }
-
   render(){
     return (
       <div>
         <button className = "DrumPadButton" onClick={this.triggerSound}>{this.props.sound.name} </button>
-        <SequencerContainer audio={this.props.sound} playSound={this.triggerSound}/>
+        <SequencerContainer playing={this.props.playing} audio={this.props.sound} playSound={this.triggerSound}/>
       </div>
     )
   }

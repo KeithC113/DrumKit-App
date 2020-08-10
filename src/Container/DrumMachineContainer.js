@@ -104,7 +104,8 @@ class DrumMachineContainer extends Component{
         name: "Snare",
         sound: new Audio(snare),
         keyStroke: 50
-      }
+      },
+      playing: false
     }
     this.playSound = this.playSound.bind(this);
   }
@@ -114,25 +115,40 @@ class DrumMachineContainer extends Component{
     return audioSound.play();
   }
 
+  startSequence(){
+    this.setState({playing: true});
+  }
+
+  stopSequence(){
+    this.setState({playing:false});
+  }
+
   render(){
     return (
       <div className ="DrumMachineContainer">
-        <DrumMachineComponent sound={this.state.kick} playSound={this.playSound}/>
-        <DrumMachineComponent sound={this.state.snare} playSound={this.playSound} />
-        <DrumMachineComponent sound={this.state.openHiHat} playSound={this.playSound} />
-        <DrumMachineComponent sound={this.state.closedHiHat} playSound={this.playSound} />
-        <DrumMachineComponent sound={this.state.cymbal} playSound={this.playSound} />
-        <DrumMachineComponent sound={this.state.clap} playSound={this.playSound} />
-        <DrumMachineComponent sound={this.state.cowbell} playSound={this.playSound} />
-        <DrumMachineComponent sound={this.state.clave} playSound={this.playSound} />
-        <DrumMachineComponent sound={this.state.lowTom} playSound={this.playSound} />
-        <DrumMachineComponent sound={this.state.midTom} playSound={this.playSound} />
-        <DrumMachineComponent sound={this.state.highTom} playSound={this.playSound} />
-        <DrumMachineComponent sound={this.state.rimShot} playSound={this.playSound} />
-        <DrumMachineComponent sound={this.state.lowConga} playSound={this.playSound} />
-        <DrumMachineComponent sound={this.state.midConga} playSound={this.playSound} />
-        <DrumMachineComponent sound={this.state.highConga} playSound={this.playSound} />
-        <DrumMachineComponent sound={this.state.shaker} playSound={this.playSound} />
+        <DrumMachineComponent playing={this.state.playing} sound={this.state.kick} playSound={this.playSound}/>
+        <DrumMachineComponent playing={this.state.playing} sound={this.state.snare} playSound={this.playSound} />
+        <DrumMachineComponent playing={this.state.playing} sound={this.state.openHiHat} playSound={this.playSound} />
+        <DrumMachineComponent playing={this.state.playing} sound={this.state.closedHiHat} playSound={this.playSound} />
+        <DrumMachineComponent playing={this.state.playing} sound={this.state.cymbal} playSound={this.playSound} />
+        <DrumMachineComponent playing={this.state.playing} sound={this.state.clap} playSound={this.playSound} />
+        <DrumMachineComponent playing={this.state.playing} sound={this.state.cowbell} playSound={this.playSound} />
+        <DrumMachineComponent playing={this.state.playing} sound={this.state.clave} playSound={this.playSound} />
+        <DrumMachineComponent playing={this.state.playing} sound={this.state.lowTom} playSound={this.playSound} />
+        <DrumMachineComponent playing={this.state.playing} sound={this.state.midTom} playSound={this.playSound} />
+        <DrumMachineComponent playing={this.state.playing} sound={this.state.highTom} playSound={this.playSound} />
+        <DrumMachineComponent playing={this.state.playing} sound={this.state.rimShot} playSound={this.playSound} />
+        <DrumMachineComponent playing={this.state.playing} sound={this.state.lowConga} playSound={this.playSound} />
+        <DrumMachineComponent playing={this.state.playing} sound={this.state.midConga} playSound={this.playSound} />
+        <DrumMachineComponent playing={this.state.playing} sound={this.state.highConga} playSound={this.playSound} />
+        <DrumMachineComponent playing={this.state.playing} sound={this.state.shaker} playSound={this.playSound} />
+
+        <button type="button" onClick={() => {
+                  if (this.state.playing) this.stopSequence()
+                  else this.startSequence()
+                }}>
+                {this.state.playing ? "Pause" : "Play"}
+        </button>
       </div>
     )
   }

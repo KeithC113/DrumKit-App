@@ -8,8 +8,7 @@ class SequencerContainer extends Component{
     super(props);
     this.state = {
       bpm: 120,
-      pattern: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-      playing: false
+      pattern: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     }
     this.activateButton1 = this.activateButton1.bind(this);
     this.activateButton2 = this.activateButton2.bind(this);
@@ -29,16 +28,22 @@ class SequencerContainer extends Component{
     this.activateButton16 = this.activateButton16.bind(this);
   }
 
-  play(){
-    this.setState({playing: true});
+  componentDidUpdate(){
+    if(this.props.playing === true){
+      this.play()
+    } else {
+      this.pause()
+    }
+  }
 
+  play(){
     let step = 0;
 
     if(!this.timer){
       this.timer = setInterval(
         () => {
           this.state.pattern.map( (button, i) => {
-            if(this.state.pattern[step]) {
+            if(this.state.pattern[step] === 1) {
               this.props.playSound();
             }
             return null;
@@ -52,7 +57,6 @@ class SequencerContainer extends Component{
   }
 
   pause(){
-    this.setState({playing: false})
     clearInterval( this.timer );
     this.timer = null;
   }
@@ -275,12 +279,7 @@ class SequencerContainer extends Component{
 
     return(
       <div>
-      <button type="button" onClick={() => {
-                if (this.state.playing) this.pause()
-                else this.play()
-              }}>
-              {this.state.playing ? "Pause" : "Play"}
-      </button>
+
 
       <button onClick={this.activateButton1}>{this.state.pattern[0]}</button>
       <button onClick={this.activateButton2}>{this.state.pattern[1]}</button>
