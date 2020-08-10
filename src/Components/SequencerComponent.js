@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 let numSteps = 16;
 
-class SequencerContainer extends Component{
+class SequencerComponent extends Component{
 
   constructor(props){
     super(props);
@@ -307,4 +307,4 @@ class SequencerContainer extends Component{
 
 }
 
-export default SequencerContainer;
+export default SequencerComponent;

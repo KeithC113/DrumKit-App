@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import SequencerContainer from "../Container/SequencerContainer"
+import SequencerComponent from "./SequencerComponent"
 import './DrumMachineComponent.css'
 
 class DrumMachineComponent extends Component {
@@ -36,7 +36,7 @@ class DrumMachineComponent extends Component {
     return (
       <div>
         <button className = "DrumPadButton" onClick={this.triggerSound}>{this.props.sound.name} </button>
-        <SequencerContainer audio={this.props.sound} playSound={this.triggerSound}/>
+        <SequencerComponent audio={this.props.sound} playSound={this.triggerSound}/>
       </div>
     )
   }
