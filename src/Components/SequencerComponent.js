@@ -53,7 +53,7 @@ class SequencerContainer extends Component{
           step++;
           step %= numSteps;
         },
-        (60000 / this.state.bpm)
+        (60000 / this.state.bpm) / 2
       );
     }
   }
@@ -288,7 +288,7 @@ class SequencerContainer extends Component{
     // })
 
     return(
-      <div className="sequencer">
+      <div className={this.props.selected ? "show-sequencer" : "hide-sequencer"}>
 
 
       <button className={this.state.pattern[0] === 1 ? "button-on" : "button-off"} onClick={this.activateButton1}>{this.state.pattern[0] === 1 ? "I" : "O"}</button>
