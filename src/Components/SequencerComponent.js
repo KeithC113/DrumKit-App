@@ -8,7 +8,6 @@ class SequencerContainer extends Component{
   constructor(props){
     super(props);
     this.state = {
-      bpm: 120,
       pattern: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     }
     this.activateButton1 = this.activateButton1.bind(this);
@@ -53,7 +52,7 @@ class SequencerContainer extends Component{
           step++;
           step %= numSteps;
         },
-        (60000 / this.state.bpm)
+        (60000 / this.props.bpm) / 2
       );
     }
   }

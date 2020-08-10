@@ -105,9 +105,11 @@ class DrumMachineContainer extends Component{
         sound: new Audio(snare),
         keyStroke: 50
       },
-      playing: false
+      playing: false,
+      bpm: 120
     }
     this.playSound = this.playSound.bind(this);
+    this.handleBPM = this.handleBPM.bind(this);
   }
 
   playSound(audioSound){
@@ -123,33 +125,47 @@ class DrumMachineContainer extends Component{
     this.setState({playing:false});
   }
 
+  handleBPM(event) {
+    let newBPM = event.target.value;
+    this.setState({bpm: newBPM});
+  }
+
   render(){
     return (
       <div className ="DrumMachineContainer">
-        <DrumMachineComponent playing={this.state.playing} sound={this.state.kick} playSound={this.playSound}/>
-        <DrumMachineComponent playing={this.state.playing} sound={this.state.snare} playSound={this.playSound} />
-        <DrumMachineComponent playing={this.state.playing} sound={this.state.openHiHat} playSound={this.playSound} />
-        <DrumMachineComponent playing={this.state.playing} sound={this.state.closedHiHat} playSound={this.playSound} />
-        <DrumMachineComponent playing={this.state.playing} sound={this.state.cymbal} playSound={this.playSound} />
-        <DrumMachineComponent playing={this.state.playing} sound={this.state.clap} playSound={this.playSound} />
-        <DrumMachineComponent playing={this.state.playing} sound={this.state.cowbell} playSound={this.playSound} />
-        <DrumMachineComponent playing={this.state.playing} sound={this.state.clave} playSound={this.playSound} />
-        <DrumMachineComponent playing={this.state.playing} sound={this.state.lowTom} playSound={this.playSound} />
-        <DrumMachineComponent playing={this.state.playing} sound={this.state.midTom} playSound={this.playSound} />
-        <DrumMachineComponent playing={this.state.playing} sound={this.state.highTom} playSound={this.playSound} />
-        <DrumMachineComponent playing={this.state.playing} sound={this.state.rimShot} playSound={this.playSound} />
-        <DrumMachineComponent playing={this.state.playing} sound={this.state.lowConga} playSound={this.playSound} />
-        <DrumMachineComponent playing={this.state.playing} sound={this.state.midConga} playSound={this.playSound} />
-        <DrumMachineComponent playing={this.state.playing} sound={this.state.highConga} playSound={this.playSound} />
-        <DrumMachineComponent playing={this.state.playing} sound={this.state.shaker} playSound={this.playSound} />
-        <div>
-        <button className="StartButton" type="button" onClick={() => {
-                  if (this.state.playing) this.stopSequence()
-                  else this.startSequence()
-                }}>
-                {this.state.playing ? "Stop" : "Start"}
-        </button>
-        </div>
+      <div>
+      <button className="StartButton" type="button" onClick={() => {
+                if (this.state.playing) this.stopSequence()
+                else this.startSequence()
+              }}>
+              {this.state.playing ? "Stop" : "Start"}
+      </button>
+      </div>
+      <span className="bpm">{this.state.bpm} BPM</span>
+        <input
+          type="range"
+          min="40"
+          max="180"
+          step="1"
+          value={this.state.bpm}
+          onChange={this.handleBPM}
+        />
+        <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.kick} playSound={this.playSound}/>
+        <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.snare} playSound={this.playSound} />
+        <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.openHiHat} playSound={this.playSound} />
+        <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.closedHiHat} playSound={this.playSound} />
+        <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.cymbal} playSound={this.playSound} />
+        <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.clap} playSound={this.playSound} />
+        <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.cowbell} playSound={this.playSound} />
+        <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.clave} playSound={this.playSound} />
+        <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.lowTom} playSound={this.playSound} />
+        <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.midTom} playSound={this.playSound} />
+        <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.highTom} playSound={this.playSound} />
+        <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.rimShot} playSound={this.playSound} />
+        <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.lowConga} playSound={this.playSound} />
+        <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.midConga} playSound={this.playSound} />
+        <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.highConga} playSound={this.playSound} />
+        <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.shaker} playSound={this.playSound} />
       </div>
     )
   }
