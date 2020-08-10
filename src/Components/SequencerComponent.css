@@ -56,11 +56,12 @@
 	padding:12px;
 	text-decoration:none;
 	text-shadow:0px 0px 0px #54596b;
-  width: auto;
+  width: 5px;
   text-align: center;
   align-content: center;
   margin-right: 2px;
-  margin-bottom: 2px
+  margin-bottom: 2px;
+  text-align: center;
 }
 .button-on:hover {
 	background:linear-gradient(to bottom, #1a32ba 5%, #57a3ff 100%);
