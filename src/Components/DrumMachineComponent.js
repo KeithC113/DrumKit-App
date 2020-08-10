@@ -6,8 +6,12 @@ class DrumMachineComponent extends Component {
 
   constructor(props){
     super(props);
+    this.state = {
+      selected: false
+    }
     this.triggerSound = this.triggerSound.bind(this);
     this.keyTrigger = this.keyTrigger.bind(this);
+    this.selectedSound = this.selectedSound.bind(this);
   }
 
   keyTrigger(event){
@@ -28,11 +32,19 @@ class DrumMachineComponent extends Component {
     return this.props.playSound(this.props.sound.sound);
   }
 
+  selectedSound(){
+    if(this.state.selected === false){
+      this.setState({selected: true})
+    } else {
+      this.setState({selected: false})
+    }
+  }
+
   render(){
     return (
       <div>
-        <button className = "DrumPadButton" onClick={this.triggerSound}>{this.props.sound.name} </button>
-        <SequencerComponent bpm={this.props.bpm} playing={this.props.playing} audio={this.props.sound} playSound={this.triggerSound}/>
+        <button className = "DrumPadButton" onClick={this.selectedSound}>{this.props.sound.name} </button>
+        <SequencerComponent selected={this.state.selected} bpm={this.props.bpm} playing={this.props.playing} audio={this.props.sound} playSound={this.triggerSound}/>
       </div>
     )
   }

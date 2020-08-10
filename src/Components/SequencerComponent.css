@@ -1,30 +1,15 @@
 .sequencer{
-  margin-bottom: 10px
+  display: grid;
+  grid-template-columns: 35px 35px 35px 35px 35px 35px 35px 35px;
+  padding: 10px;
 }
 
-.button-on {
-	box-shadow:inset 0px -9px 9px 0px #4f82db;
-	background:linear-gradient(to bottom, #57a3ff 5%, #1a32ba 100%);
-	background-color:#57a3ff;
-	border-radius:10px;
-	border:3px solid #2671cc;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:10px;
-	padding:25px 10px;
-	text-decoration:none;
-	text-shadow:0px 0px 0px #54596b;
+.show-sequencer{
+  display: block
+}
 
-}
-.button-on:hover {
-	background:linear-gradient(to bottom, #1a32ba 5%, #57a3ff 100%);
-	background-color:#1a32ba;
-}
-.button-on:active {
-	position:relative;
-	top:1px;
+.hide-sequencer{
+  display: none
 }
 
 .button-off {
@@ -37,16 +22,51 @@
 	cursor:pointer;
 	color:#000000;
 	font-family:Arial;
-	font-size:10px;
-	padding:25px 10px;
+	font-size:15px;
+	padding:12px;
 	text-decoration:none;
 	text-shadow:0px 0px 0px #54596b;
+  width: 5px;
+  text-align: center;
+  align-content: center;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  text-align: center;
 }
 .button-off:hover {
 	background:linear-gradient(to bottom, #73b2ff 5%, #b8daff 100%);
 	background-color:#73b2ff;
 }
 .button-off:active {
+	position:relative;
+	top:1px;
+}
+
+.button-on {
+	box-shadow:inset 0px -9px 9px 0px #4f82db;
+	background:linear-gradient(to bottom, #57a3ff 5%, #1a32ba 100%);
+	background-color:#57a3ff;
+	border-radius:10px;
+	border:3px solid #2671cc;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:12px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #54596b;
+  width: auto;
+  text-align: center;
+  align-content: center;
+  margin-right: 2px;
+  margin-bottom: 2px
+}
+.button-on:hover {
+	background:linear-gradient(to bottom, #1a32ba 5%, #57a3ff 100%);
+	background-color:#1a32ba;
+}
+.button-on:active {
 	position:relative;
 	top:1px;
 }
@@ -62,9 +82,12 @@
 	color:#ffffff;
 	font-family:Arial;
 	font-size:10px;
-	padding:25px 10px;
+	padding:20px;
 	text-decoration:none;
 	text-shadow:0px 0px 0px #54596b;
+  margin-left: 2px;
+  margin-top: 3px;
+  width: 80px;
 }
 
 .clear-button:hover {

@@ -1,6 +1,8 @@
 .App {
   display: flex;
   justify-content: center;
+  background: linear-gradient(to bottom, #3b3b3b 5%, #000000 100%);
+  margin-bottom: 0px
 }
 
 .App-logo {

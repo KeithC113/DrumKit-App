@@ -133,16 +133,15 @@ class DrumMachineContainer extends Component{
   render(){
     return (
       <div className ="DrumMachineContainer">
-      <div>
+      <div className="controls">
       <button className="StartButton" type="button" onClick={() => {
                 if (this.state.playing) this.stopSequence()
                 else this.startSequence()
               }}>
               {this.state.playing ? "Stop" : "Start"}
       </button>
-      </div>
-      <span className="bpm">{this.state.bpm} BPM</span>
-        <input
+      <span className="bpm">{this.state.bpm} BPM
+        <input className="slider"
           type="range"
           min="40"
           max="180"
@@ -150,6 +149,9 @@ class DrumMachineContainer extends Component{
           value={this.state.bpm}
           onChange={this.handleBPM}
         />
+      </span>
+      </div>
+        <div className="drum-pads">
         <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.kick} playSound={this.playSound}/>
         <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.snare} playSound={this.playSound} />
         <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.openHiHat} playSound={this.playSound} />
@@ -166,6 +168,7 @@ class DrumMachineContainer extends Component{
         <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.midConga} playSound={this.playSound} />
         <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.highConga} playSound={this.playSound} />
         <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.shaker} playSound={this.playSound} />
+        </div>
       </div>
     )
   }
