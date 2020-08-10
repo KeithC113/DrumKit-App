@@ -26,6 +26,7 @@ class SequencerContainer extends Component{
     this.activateButton14 = this.activateButton14.bind(this);
     this.activateButton15 = this.activateButton15.bind(this);
     this.activateButton16 = this.activateButton16.bind(this);
+    this.clearAll = this.clearAll.bind(this);
   }
 
   componentDidUpdate(){
@@ -269,6 +270,14 @@ class SequencerContainer extends Component{
     this.setState({pattern});
   }
 
+  clearAll(){
+    let pattern = [...this.state.pattern];
+    let clearedPattern = pattern.map((button) => {
+      return button = 0;
+    })
+    this.setState({pattern: clearedPattern});
+  }
+
   render(){
 
     // let sequencer = this.state.pattern.map( ( button, i ) => {
@@ -281,24 +290,24 @@ class SequencerContainer extends Component{
       <div>
 
 
-      <button onClick={this.activateButton1}>{this.state.pattern[0]}</button>
-      <button onClick={this.activateButton2}>{this.state.pattern[1]}</button>
-      <button onClick={this.activateButton3}>{this.state.pattern[2]}</button>
-      <button onClick={this.activateButton4}>{this.state.pattern[3]}</button>
-      <button onClick={this.activateButton5}>{this.state.pattern[4]}</button>
-      <button onClick={this.activateButton6}>{this.state.pattern[5]}</button>
-      <button onClick={this.activateButton7}>{this.state.pattern[6]}</button>
-      <button onClick={this.activateButton8}>{this.state.pattern[7]}</button>
-      <button onClick={this.activateButton9}>{this.state.pattern[8]}</button>
-      <button onClick={this.activateButton10}>{this.state.pattern[9]}</button>
-      <button onClick={this.activateButton11}>{this.state.pattern[10]}</button>
-      <button onClick={this.activateButton12}>{this.state.pattern[11]}</button>
-      <button onClick={this.activateButton13}>{this.state.pattern[12]}</button>
-      <button onClick={this.activateButton14}>{this.state.pattern[13]}</button>
-      <button onClick={this.activateButton15}>{this.state.pattern[14]}</button>
-      <button onClick={this.activateButton16}>{this.state.pattern[15]}</button>
+      <button onClick={this.activateButton1}>{this.state.pattern[0] === 1 ? "On" : "Off"}</button>
+      <button onClick={this.activateButton2}>{this.state.pattern[1] === 1 ? "On" : "Off"}</button>
+      <button onClick={this.activateButton3}>{this.state.pattern[2] === 1 ? "On" : "Off"}</button>
+      <button onClick={this.activateButton4}>{this.state.pattern[3] === 1 ? "On" : "Off"}</button>
+      <button onClick={this.activateButton5}>{this.state.pattern[4] === 1 ? "On" : "Off"}</button>
+      <button onClick={this.activateButton6}>{this.state.pattern[5] === 1 ? "On" : "Off"}</button>
+      <button onClick={this.activateButton7}>{this.state.pattern[6] === 1 ? "On" : "Off"}</button>
+      <button onClick={this.activateButton8}>{this.state.pattern[7] === 1 ? "On" : "Off"}</button>
+      <button onClick={this.activateButton9}>{this.state.pattern[8] === 1 ? "On" : "Off"}</button>
+      <button onClick={this.activateButton10}>{this.state.pattern[9] === 1 ? "On" : "Off"}</button>
+      <button onClick={this.activateButton11}>{this.state.pattern[10] === 1 ? "On" : "Off"}</button>
+      <button onClick={this.activateButton12}>{this.state.pattern[11] === 1 ? "On" : "Off"}</button>
+      <button onClick={this.activateButton13}>{this.state.pattern[12] === 1 ? "On" : "Off"}</button>
+      <button onClick={this.activateButton14}>{this.state.pattern[13] === 1 ? "On" : "Off"}</button>
+      <button onClick={this.activateButton15}>{this.state.pattern[14] === 1 ? "On" : "Off"}</button>
+      <button onClick={this.activateButton16}>{this.state.pattern[15] === 1 ? "On" : "Off"}</button>
 
-
+      <button onClick={this.clearAll}>Clear All</button>
 
       </div>
     )
