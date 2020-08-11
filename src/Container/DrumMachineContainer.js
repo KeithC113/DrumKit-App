@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import DrumMachineComponent from '../Components/DrumMachineComponent';
+import Equaliser from '../Components/Equaliser';
 import './DrumMachineContainer.css'
+import '../Components/Equaliser.css'
 
 import clap from '../Public/Clap.wav';
 import clave from '../Public/Clave.wav';
@@ -18,6 +20,7 @@ import openHiHat from '../Public/OpenHiHat.wav';
 import rimShot from '../Public/Rimshot.wav';
 import shaker from '../Public/Shaker.wav';
 import snare from '../Public/Snare.wav';
+import test from '../Public/test.mp3';
 
 
 class DrumMachineContainer extends Component{
@@ -168,6 +171,9 @@ class DrumMachineContainer extends Component{
         <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.midConga} playSound={this.playSound} />
         <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.highConga} playSound={this.playSound} />
         <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.shaker} playSound={this.playSound} />
+        </div>
+        <div className="eq">
+        <Equaliser eq={this.state.sound}/>
         </div>
       </div>
     )
