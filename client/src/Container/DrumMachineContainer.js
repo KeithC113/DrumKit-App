@@ -166,7 +166,7 @@ class DrumMachineContainer extends Component{
   }
 
   handleSave(name, pattern){
-    let newName = name + "pattern";
+    let newName = name + "Pattern";
     this.setState({[newName]: pattern });
   }
 
