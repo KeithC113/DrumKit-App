@@ -286,16 +286,20 @@ class SequencerContainer extends Component{
 
   savePattern(event){
     let pattern = [...this.state.pattern];
-    let newPattern = {};
-    pattern.forEach((button, index) => {
-      newPattern[index] = button
-    })
-    this.setState({
-      savedPattern: newPattern
-      })
-      this.props.save(newPattern);
-      console.log(newPattern);
+    this.props.save(this.props.name, pattern);
   }
+  // savePattern(event){
+  //   let pattern = [...this.state.pattern];
+  //   let newPattern = {};
+  //   pattern.forEach((button, index) => {
+  //     newPattern[index] = button
+  //   })
+  //   this.setState({
+  //     savedPattern: newPattern
+  //     })
+  //     this.props.save(newPattern);
+  //     console.log(newPattern);
+  // }
 
   // loop over pattern []
     // create key value pair on each iteration

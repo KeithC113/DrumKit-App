@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import DrumMachineComponent from '../Components/DrumMachineComponent';
 import './DrumMachineContainer.css'
+import Request from '../Helpers/request'
 
 import clap from '../Public/Clap.wav';
 import clave from '../Public/Clave.wav';
@@ -122,11 +123,28 @@ class DrumMachineContainer extends Component{
         currentPattern: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       },
       playing: false,
-      bpm: 120
+      bpm: 120,
+      kickPattern: [],
+      clapPattern: [],
+      clavePattern: [],
+      closedHiHatPattern: [],
+      cowbellPattern: [],
+      cymbalPattern: [],
+      highCongaPattern: [],
+      highTomPattern: [],
+      lowCongaPattern: [],
+      lowTomPattern: [],
+      midCongaPattern: [],
+      midTomPattern: [],
+      openHiHatPattern: [],
+      rimShotPattern: [],
+      shakerPattern: [],
+      snarePattern: []
     }
     this.playSound = this.playSound.bind(this);
     this.handleBPM = this.handleBPM.bind(this);
     this.handleSave = this.handleSave.bind(this);
+    this.handleSaveAll = this.handleSaveAll.bind(this);
   }
 
   playSound(audioSound){
@@ -147,11 +165,36 @@ class DrumMachineContainer extends Component{
     this.setState({bpm: newBPM});
   }
 
-  handleSave(newPattern){
-    this.setState({clap: {name: "Clap",
-    sound: new Audio(clap),
-    keyStroke: 87,
-    currentPattern: newPattern}})
+  handleSave(name, pattern){
+    let newName = name + "pattern";
+    this.setState({[newName]: pattern });
+  }
+
+  handleSaveAll(){
+    let saveObject = {};
+    const request = new Request();
+    const url = '/api/songs';
+    saveObject["kick"] = this.state.kickPattern;
+    saveObject["clap"] = this.state.clapPattern;
+    saveObject["clave"] = this.state.clavePattern;
+    saveObject["closedHiHat"] = this.state.closedHiHatPattern;
+    saveObject["cowbell"] = this.state.cowbellPattern;
+    saveObject["cymbal"] = this.state.cymbalPattern;
+    saveObject["highConga"] = this.state.highCongaPattern;
+    saveObject["highTom"] = this.state.highTomPattern;
+    saveObject["lowConga"] = this.state.lowCongaPattern;
+    saveObject["lowTom"] = this.state.lowTomPattern;
+    saveObject["midConga"] = this.state.midCongaPattern;
+    saveObject["midTom"] = this.state.midTomPattern;
+    saveObject["openHiHat"] = this.state.openHiHatPattern;
+    saveObject["rimShot"] = this.state.rimShotPattern;
+    saveObject["shaker"] = this.state.shakerPattern;
+    saveObject["snare"] = this.state.snarePattern;
+    console.log("saveObject", saveObject);
+    request.post(url, saveObject)
+    .then(() => {
+      console.log("Song saved successfully");
+})
   }
 
   render(){
@@ -162,7 +205,7 @@ class DrumMachineContainer extends Component{
         if (this.state.playing) this.stopSequence()
         else this.startSequence()
       }}/>
-      <button className="SaveAllButton" type="button" onClick={this.handleSave}>Save All</button>
+      <button className="SaveAllButton" type="button" onClick={this.handleSaveAll}>Save All</button>
       <span className="bpm">{this.state.bpm} BPM
       <input className="slider"
       type="range"
@@ -175,22 +218,22 @@ class DrumMachineContainer extends Component{
       </span>
       </div>
         <div className="drum-pads">
-        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.kick} playSound={this.playSound}/>
-        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.snare} playSound={this.playSound} />
-        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.openHiHat} playSound={this.playSound} />
-        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.closedHiHat} playSound={this.playSound} />
-        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.cymbal} playSound={this.playSound} />
-        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.clap} playSound={this.playSound} />
-        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.cowbell} playSound={this.playSound} />
-        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.clave} playSound={this.playSound} />
-        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.lowTom} playSound={this.playSound} />
-        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.midTom} playSound={this.playSound} />
-        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.highTom} playSound={this.playSound} />
-        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.rimShot} playSound={this.playSound} />
-        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.lowConga} playSound={this.playSound} />
-        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.midConga} playSound={this.playSound} />
-        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.highConga} playSound={this.playSound} />
-        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.shaker} playSound={this.playSound} />
+        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.kick} playSound={this.playSound} name={"kick"}/>
+        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.snare} playSound={this.playSound} name={"snare"}/>
+        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.openHiHat} playSound={this.playSound} name={"openHiHat"}/>
+        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.closedHiHat} playSound={this.playSound} name={"closedHiHat"}/>
+        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.cymbal} playSound={this.playSound} name={"cymbal"}/>
+        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.clap} playSound={this.playSound} name={"clap"}/>
+        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.cowbell} playSound={this.playSound} name={"cowbell"}/>
+        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.clave} playSound={this.playSound} name={"clave"}/>
+        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.lowTom} playSound={this.playSound} name={"lowTom"}/>
+        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.midTom} playSound={this.playSound} name={"midTom"}/>
+        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.highTom} playSound={this.playSound} name={"highTom"}/>
+        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.rimShot} playSound={this.playSound} name={"rimShot"}/>
+        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.lowConga} playSound={this.playSound} name={"lowConga"}/>
+        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.midConga} playSound={this.playSound} name={"midConga"}/>
+        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.highConga} playSound={this.playSound} name={"highConga"}/>
+        <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.shaker} playSound={this.playSound} name={"shaker"}/>
         </div>
       </div>
     )
