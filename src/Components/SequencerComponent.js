@@ -3,6 +3,7 @@ import "./SequencerComponent.css"
 
 let numSteps = 16;
 
+
 class SequencerContainer extends Component{
 
   constructor(props){
@@ -28,7 +29,7 @@ class SequencerContainer extends Component{
     this.activateButton14 = this.activateButton14.bind(this);
     this.activateButton15 = this.activateButton15.bind(this);
     this.activateButton16 = this.activateButton16.bind(this);
-    
+
     this.savePattern = this.savePattern.bind(this);
     this.clearAll = this.clearAll.bind(this);
   }
