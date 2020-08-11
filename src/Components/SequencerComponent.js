@@ -8,8 +8,10 @@ class SequencerContainer extends Component{
   constructor(props){
     super(props);
     this.state = {
-      pattern: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      pattern: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      savedPattern: []
     }
+
     this.activateButton1 = this.activateButton1.bind(this);
     this.activateButton2 = this.activateButton2.bind(this);
     this.activateButton3 = this.activateButton3.bind(this);
@@ -26,6 +28,8 @@ class SequencerContainer extends Component{
     this.activateButton14 = this.activateButton14.bind(this);
     this.activateButton15 = this.activateButton15.bind(this);
     this.activateButton16 = this.activateButton16.bind(this);
+    
+    this.savePattern = this.savePattern.bind(this);
     this.clearAll = this.clearAll.bind(this);
   }
 
@@ -39,7 +43,6 @@ class SequencerContainer extends Component{
 
   play(){
     let step = 0;
-
     if(!this.timer){
       this.timer = setInterval(
         () => {
@@ -278,18 +281,36 @@ class SequencerContainer extends Component{
     this.setState({pattern: clearedPattern});
   }
 
-  render(){
+  savePattern(event){
+    let pattern = [...this.state.pattern];
+    let newPattern = {};
+    pattern.forEach((button, index) => {
+      newPattern[index] = button
+    })
+    this.setState({
+      savedPattern: newPattern
+      })
+      this.props.save(newPattern);
+      console.log(newPattern);
+  }
 
+  // loop over pattern []
+    // create key value pair on each iteration
+      // where key is a number
+        // value is at current iteration of array we're looping over
+        // Then send object back to top level
+        // .put into new pattern object
+
+  render(){
     // let sequencer = this.state.pattern.map( ( button, i ) => {
     //
     //   return <button onClick={this.activateButton1}>{this.state.pattern[i]}</button>
     //
     // })
-
     return(
       <div className={this.props.selected ? "show-sequencer" : "hide-sequencer"}>
-        <div className="sequencer">
 
+        <div className="sequencer">
           <button className={this.state.pattern[0] === 1 ? "button-on" : "button-off"} onClick={this.activateButton1}>1</button>
           <button className={this.state.pattern[1] === 1 ? "button-on" : "button-off"} onClick={this.activateButton2}>2</button>
           <button className={this.state.pattern[2] === 1 ? "button-on" : "button-off"} onClick={this.activateButton3}>3</button>
@@ -306,15 +327,15 @@ class SequencerContainer extends Component{
           <button className={this.state.pattern[13] === 1 ? "button-on" : "button-off"} onClick={this.activateButton14}>6</button>
           <button className={this.state.pattern[14] === 1 ? "button-on" : "button-off"} onClick={this.activateButton15}>7</button>
           <button className={this.state.pattern[15] === 1 ? "button-on" : "button-off"} onClick={this.activateButton16}>8</button>
+
+          <button className="save-button" onClick={this.savePattern}>Save</button>
+
           <button className="clear-button" onClick={this.clearAll}>Clear</button>
           </div>
-
-
 
       </div>
     )
   }
-
 }
 
 export default SequencerContainer;
