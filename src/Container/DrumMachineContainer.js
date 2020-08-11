@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import DrumMachineComponent from '../Components/DrumMachineComponent';
-import Equaliser from '../Components/Equaliser';
+import EqualiserComponent from '../Components/EqualiserComponent';
 import './DrumMachineContainer.css'
 import '../Components/Equaliser.css'
 
@@ -173,7 +173,7 @@ class DrumMachineContainer extends Component{
         <DrumMachineComponent bpm={this.state.bpm} playing={this.state.playing} sound={this.state.shaker} playSound={this.playSound} />
         </div>
         <div className="eq">
-        <Equaliser eq={this.state.sound}/>
+        <EqualiserComponent eq={this.state.kick}/>
         </div>
       </div>
     )
