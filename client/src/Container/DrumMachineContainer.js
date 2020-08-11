@@ -21,6 +21,7 @@ import shaker from '../Public/Shaker.wav';
 import snare from '../Public/Snare.wav';
 import playIcon from '../Public/play.png';
 import stopIcon from '../Public/stop.png';
+import saveAll from '../Public/saveAll.png';
 
 class DrumMachineContainer extends Component{
   constructor(props){
@@ -201,11 +202,11 @@ class DrumMachineContainer extends Component{
     return (
       <div className ="DrumMachineContainer">
       <div className="controls">
+      <div className="control-elements">
       <img alt="Play" className="StartButton" src={this.state.playing ? stopIcon : playIcon} onClick={() => {
         if (this.state.playing) this.stopSequence()
         else this.startSequence()
       }}/>
-      <button className="SaveAllButton" type="button" onClick={this.handleSaveAll}>Save All</button>
       <span className="bpm">{this.state.bpm} BPM
       <input className="slider"
       type="range"
@@ -216,6 +217,8 @@ class DrumMachineContainer extends Component{
       onChange={this.handleBPM}
       />
       </span>
+      <img className="SaveAllButton" src={saveAll} alt="save-all" onClick={this.handleSaveAll}/>
+      </div>
       </div>
         <div className="drum-pads">
         <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.kick} playSound={this.playSound} name={"kick"}/>
