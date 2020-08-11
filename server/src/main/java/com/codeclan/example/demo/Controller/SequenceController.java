@@ -27,7 +27,7 @@ public class SequenceController {
     }
 
     @PostMapping(value = "/sequences")
-    public ResponseEntity<Sequence> postPirate(@RequestBody Sequence sequence) {
+    public ResponseEntity<Sequence> postSong(@RequestBody Sequence sequence) {
         sequenceRepository.save(sequence);
         return new ResponseEntity<>(sequence, HttpStatus.OK);
     }

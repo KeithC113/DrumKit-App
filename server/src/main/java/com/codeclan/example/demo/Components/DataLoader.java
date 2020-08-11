@@ -1,13 +1,17 @@
 package com.codeclan.example.demo.Components;
 
 import com.codeclan.example.demo.Models.Sequence;
+import com.codeclan.example.demo.Models.Song;
 import com.codeclan.example.demo.Models.User;
 import com.codeclan.example.demo.Repository.SequenceRepository;
+import com.codeclan.example.demo.Repository.SongRepository;
 import com.codeclan.example.demo.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
 
 @Component
 public class DataLoader implements ApplicationRunner {
@@ -18,11 +22,25 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     SequenceRepository sequenceRepository;
 
+    @Autowired
+    SongRepository songRepository;
+
     public DataLoader(){
 
     }
 
     public void run(ApplicationArguments args) {
+
+        Song song1 = new Song("I've got a brand new combine harvester");
+        ArrayList<Integer> pattern = new ArrayList<Integer>();
+        pattern.add(1);
+        pattern.add(0);
+        pattern.add(1);
+        pattern.add(0);
+        song1.setKick(pattern);
+        songRepository.save(song1);
+
+
         User keith = new User("Keith");
         userRepository.save(keith);
 
