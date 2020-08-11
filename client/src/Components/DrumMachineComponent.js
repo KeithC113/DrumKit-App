@@ -42,7 +42,7 @@ class DrumMachineComponent extends Component {
 
   render(){
     return (
-      <div>
+      <div className = "drum-channel">
         <button className = "DrumPadButton" onClick={this.selectedSound}>{this.props.sound.name} </button>
         <SequencerComponent save={this.props.save} selected={this.state.selected} bpm={this.props.bpm} playing={this.props.playing} audio={this.props.sound} playSound={this.triggerSound}/>
       </div>

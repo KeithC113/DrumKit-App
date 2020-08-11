@@ -4,7 +4,7 @@ body {
 
 .DrumMachineContainer{
   align-self: center;
-  width:600px;
+  width:750px;
   height:auto;
   background: #1f1f1f;
   padding: 25px;
@@ -12,13 +12,11 @@ body {
 }
 
 .drum-pads{
-  display: grid;
+  display:block;
   grid-template-columns: 100px 100px 100px 100px;
   padding: 10px;
 }
 
 .controls{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+
 }
