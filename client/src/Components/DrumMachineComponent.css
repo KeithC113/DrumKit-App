@@ -1,20 +1,20 @@
 .DrumPadButton {
-	box-shadow:inset 0px -9px 9px 0px #4f82db;
-	background:linear-gradient(to bottom, #57a3ff 5%, #1a32ba 100%);
+	box-shadow:inset 0px -9px 9px 0px #B0C4DE;
+	background:linear-gradient(to bottom, lightsteelblue 5%, #B0C4DE 100%);
 	background-color:#57a3ff;
 	border-radius:10px;
-	border:3px solid #2671cc;
+	border:2px solid #F5F5F5;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
+	color:black;
 	font-family:Arial;
-	font-size:10px;
-	padding:0px;
-  margin-bottom: 5px;
+	font-size:8px;
+	padding:5px;
+  margin-bottom: 10px;
 	text-decoration:none;
 	text-shadow:0px 0px 0px #54596b;
-  width: 80px;
-  height: 80px;
+  width: 75px;
+  height: 45px;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -29,36 +29,20 @@
 }
 
 .StartButton {
-	box-shadow:inset 0px -9px 9px 0px #4f82db;
-	background:linear-gradient(to bottom, #57a3ff 5%, #1a32ba 100%);
-	background-color:#57a3ff;
-	border-radius:10px;
-	border:3px solid #2671cc;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:10px;
-	padding:0px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-	margin-right: 5px;
-	text-decoration:none;
-	text-shadow:0px 0px 0px #54596b;
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-.StartButton:hover {
+/* .StartButton:hover {
 	background:linear-gradient(to bottom, #1a32ba 5%, #57a3ff 100%);
 	background-color:#1a32ba;
 }
 .StartButton:active {
 	position:relative;
 	top:1px;
-}
+} */
 
 .bpm {
 	box-shadow:inset 0px -9px 9px 0px #4f82db;
@@ -84,5 +68,9 @@
 }
 
 .slider {
+
+}
+.drum-channel{
+display: flex;
 
 }
