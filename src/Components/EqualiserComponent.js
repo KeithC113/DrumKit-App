@@ -78,7 +78,7 @@ class EqualiserComponent extends Component {
   render() {
     return (
       <div className="eql">
-        <div class="accordion">
+        {/* <div class="accordion">
           <input type="radio" name="select" class="accordion-select" />
           <div class="accordion-title"><span>How to use</span>
         </div>
@@ -86,7 +86,7 @@ class EqualiserComponent extends Component {
           <input type="radio" name="select" class="accordion-select" />
           <div class="accordion-title"><span>Visualiser</span>
         </div>
-          <div class="accordion-content"><h2></h2>
+          <div class="accordion-content"><h2></h2> */}
           <div id="mp3_player">
             <div id="audio_box">
               <audio
@@ -94,7 +94,7 @@ class EqualiserComponent extends Component {
                 autoPlay={false}
                 controls={true}
                 //this is the link to my song url feel free to use it or replace it with your own
-                src={this.testing}
+                src={test}
                 >
                 </audio>
               </div>
@@ -104,8 +104,8 @@ class EqualiserComponent extends Component {
                 >
                 </canvas>
               </div>
-            </div></div>
-          </div>
+            {/* // </div></div> */}
+          // </div>
 
         );
       }
