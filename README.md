@@ -10,13 +10,13 @@ To clear the instrument sequence, select clear.
 Further development plans are to include a load option which will retrieve saved sequences from the database.
 Front-end written in JavaScript with React, back end in Java & Spring.
 
-## AUTHORS
+### AUTHORS
 Tino Ritchie
 David Eastcroft
 Ash Oldham
 Keith Campbell
 
-## DATE
+### DATE
 Wednesday August 12th 2020
 
 ## INSTRUCTIONS TO RUN
