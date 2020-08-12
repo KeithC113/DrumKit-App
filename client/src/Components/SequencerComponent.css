@@ -1,7 +1,9 @@
 .sequencer{
   display: grid;
   grid-template-columns: 32px 32px 32px 32px 32px 32px 32px 40px 32px 32px 32px 32px 32px 32px 32px 45px 35px 55px;
-  padding: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  margin-right: 0px
 }
 
 /* .show-sequencer{

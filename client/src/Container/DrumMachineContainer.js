@@ -22,6 +22,7 @@ import snare from '../Public/Snare.wav';
 import playIcon from '../Public/play.png';
 import stopIcon from '../Public/stop.png';
 import saveAll from '../Public/saveAll.png';
+import menu from '../Public/menu.png';
 
 class DrumMachineContainer extends Component{
   constructor(props){
@@ -200,26 +201,41 @@ class DrumMachineContainer extends Component{
 
   render(){
     return (
+
       <div className ="DrumMachineContainer">
+
       <div className="controls">
-      <div className="control-elements">
-      <img alt="Play" className="StartButton" src={this.state.playing ? stopIcon : playIcon} onClick={() => {
-        if (this.state.playing) this.stopSequence()
-        else this.startSequence()
-      }}/>
-      <span className="bpm">{this.state.bpm} BPM
-      <input className="slider"
-      type="range"
-      min="40"
-      max="180"
-      step="1"
-      value={this.state.bpm}
-      onChange={this.handleBPM}
-      />
-      </span>
-      <img className="SaveAllButton" src={saveAll} alt="save-all" onClick={this.handleSaveAll}/>
+
+
+        <div className="dropdown">
+        <div className="control-elements">
+
+        <img alt="Play" className="StartButton" src={this.state.playing ? stopIcon : playIcon} onClick={() => {
+          if (this.state.playing) this.stopSequence()
+          else this.startSequence()
+        }}/>
+
+        <span className="bpm">{this.state.bpm} BPM
+        <input className="slider"
+        type="range"
+        min="40"
+        max="180"
+        step="1"
+        value={this.state.bpm}
+        onChange={this.handleBPM}
+        />
+        </span>
+
+        <img className="SaveAllButton" src={saveAll} alt="save-all" onClick={this.handleSaveAll}/>
+          <img className="drop-button" src={menu} alt="instructions"/>
+          <div className="drop-content">
+
+          </div>
+        </div>
       </div>
       </div>
+
+
         <div className="drum-pads">
         <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.kick} playSound={this.playSound} name={"kick"}/>
         <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.snare} playSound={this.playSound} name={"snare"}/>
@@ -237,7 +253,21 @@ class DrumMachineContainer extends Component{
         <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.midConga} playSound={this.playSound} name={"midConga"}/>
         <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.highConga} playSound={this.playSound} name={"highConga"}/>
         <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.shaker} playSound={this.playSound} name={"shaker"}/>
+
         </div>
+
+        <div className="instructions">
+        <h2>Drum Machine Instructions</h2>
+          <p>Click the drum pads on the left to hear each sound.</p>
+          <p>Click on the square sequencer buttons to draw in notes in the sequence.</p>
+          <p>The 16 sequencer tracks represent 2 bars of 4 beats each. (4/4 time signature)</p>
+          <p>Click Play to...well, play! Click again to stop.</p>
+          <p>The BPM slider in the middle changes the speed of the track. Must stop track to change!</p>
+          <p>The three disk icon saves all your tracks - but save each track individually before saving all!</p>
+          <p>If you want to start again, click the red X to clear a track.</p>
+          <h2>Get busy with the beats!</h2>
+        </div>
+
       </div>
     )
   }
