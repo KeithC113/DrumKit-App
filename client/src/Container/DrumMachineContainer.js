@@ -23,6 +23,7 @@ import playIcon from '../Public/play.png';
 import stopIcon from '../Public/stop.png';
 import saveAll from '../Public/saveAll.png';
 import menu from '../Public/menu.png';
+import logo from '../Public/logo.png';
 
 class DrumMachineContainer extends Component{
   constructor(props){
@@ -206,10 +207,11 @@ class DrumMachineContainer extends Component{
 
       <div className="controls">
 
-
         <div className="dropdown">
         <div className="control-elements">
 
+        <img alt="drum and drummer g19" className="logo" src={logo} />
+        
         <img alt="Play" className="StartButton" src={this.state.playing ? stopIcon : playIcon} onClick={() => {
           if (this.state.playing) this.stopSequence()
           else this.startSequence()
