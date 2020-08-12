@@ -1,6 +1,6 @@
 .sequencer{
   display: grid;
-  grid-template-columns: 32px 32px 32px 32px 32px 32px 32px 40px 32px 32px 32px 32px 32px 32px 32px 45px 35px 55px;
+  grid-template-columns: 32px 32px 32px 32px 32px 32px 32px 40px 32px 32px 32px 32px 32px 32px 32px 45px 35px 15px;
   padding-left: 10px;
   padding-top: 10px;
   margin-right: 0px
@@ -105,7 +105,13 @@
 	position:relative;
 	top:1px;
 }
-.save-icon, .clear-icon{
+.save-icon{
   height: 30px;
   width: 30px;
+}
+
+.clear-icon{
+  height: 30px;
+  width: 30px;
+  margin-right: 100px
 }
