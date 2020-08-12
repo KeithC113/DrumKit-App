@@ -1,4 +1,4 @@
-# drumanddrumber
+# drum&drumber
 
 ## INFORMATION
 Full-stack drum machine app written for Week 15 Final CodeClan Project.
@@ -37,11 +37,11 @@ Wednesday August 12th 2020
 6. Enjoy creating some beats!
 
 ## INSTRUCTIONS TO PLAY
-Click the drum pads on the left to hear each sound.
-Click on the square sequencer buttons to draw in notes in the sequence.
-The 16 sequencer tracks represent 2 bars of 4 beats each. (4/4 time signature)
-Click Play to...well, play! Click again to stop.
-The BPM slider in the middle changes the speed of the track. Must stop track to change!
-The three disk icon saves all your tracks - but save each track individually before saving all!
-If you want to start again, click the red X to clear a track.
-Get busy with the beats!
+• Click the drum pads on the left to hear each sound.  
+• Click on the square sequencer buttons to draw in notes in the sequence.  
+• The 16 sequencer tracks represent 2 bars of 4 beats each. (4/4 time signature)  
+• Click Play to...well, play! Click again to stop.  
+• The BPM slider in the middle changes the speed of the track. Must stop track to change!  
+• The three disk icon saves all your tracks - but save each track individually before saving all!  
+• If you want to start again, click the red X to clear a track.  
+• Get busy with the beats!
