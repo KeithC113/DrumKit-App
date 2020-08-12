@@ -66,8 +66,8 @@
   text-align: center;
 }
 .button-on:hover {
-	background:linear-gradient(to bottom, grey 3%, white 100%);
-	background-color:#1a32ba;
+	/* background:linear-gradient(to bottom, grey 3%, white 100%);
+	background-color:#1a32ba; */
 }
 .button-on:active {
 	position:relative;
