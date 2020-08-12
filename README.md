@@ -1,14 +1,13 @@
 # drum&drumber
 
-## INFORMATION
-Full-stack drum machine app written for Week 15 Final CodeClan Project.
-The app is designed to play 16 digital sounds representing percussion instruments.
-To play each instrument, the user can either hit the pad button, which strikes one note, or select which beat to play by selecting a sequence button.
-Once all sequences are chosen for the desired instrument, the user can play all sequences by clicking the master play button.
-To save a sequence, click the sequence save button at the end, then select the master save button at the top.
-To clear the instrument sequence, select clear.
-Further development plans are to include a load option which will retrieve saved sequences from the database.
-Front-end written in JavaScript with React, back end in Java & Spring.
+Full-stack drum machine app written for Week 15 Final CodeClan Project.  
+The app is designed to play 16 digital sounds representing percussion instruments.  
+To play each instrument, the user can either hit the pad button, which strikes one note, or select which beat to play by selecting a sequence button.  
+Once all sequences are chosen for the desired instrument, the user can play all sequences by clicking the master play button.  
+To save a sequence, click the sequence save button at the end, then select the master save button at the top.  
+To clear the instrument sequence, select clear.  
+Further development plans are to include a load option which will retrieve saved sequences from the database.  
+Front-end written in JavaScript with React, back end in Java & Spring.  
 
 ## AUTHORS
 • Tino Ritchie  
