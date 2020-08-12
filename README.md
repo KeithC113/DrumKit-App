@@ -11,10 +11,10 @@ Further development plans are to include a load option which will retrieve saved
 Front-end written in JavaScript with React, back end in Java & Spring.
 
 ## AUTHORS
-Tino Ritchie
-David Eastcroft
-Ash Oldham
-Keith Campbell
+• Tino Ritchie
+• David Eastcroft
+• Ash Oldham
+• Keith Campbell
 
 ## DATE
 Wednesday August 12th 2020
