@@ -7,7 +7,12 @@ Once all sequences are chosen for the desired instrument, the user can play all 
 To save a sequence, click the sequence save button at the end, then select the master save button at the top.  
 To clear the instrument sequence, select clear.  
 Further development plans are to include a load option which will retrieve saved sequences from the database.  
-Front-end written in JavaScript with React, back end in Java & Spring.  
+
+## BUILT WITH
+• JavaScript   
+• React
+• Java  
+• Spring
 
 ## AUTHORS
 • Tino Ritchie  
