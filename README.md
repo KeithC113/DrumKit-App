@@ -10,7 +10,7 @@ Further development plans are to include a load option which will retrieve saved
 
 ## BUILT WITH
 • JavaScript   
-• React
+• React  
 • Java  
 • Spring
 
