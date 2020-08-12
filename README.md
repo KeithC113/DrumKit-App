@@ -28,16 +28,16 @@ Wednesday August 12th 2020
 2. Create Drum Machine folder
 3. Copy git repo link, type ‘git pull’ in command line then paste  link, hit enter
 4. Client Side
-	1. Navigate to client folder
-	2. Type ‘npm install’ in command line
-	3. On completion, type ‘npm run start’
-	4. Check if browser opens up new page, if not type url ‘http://localhost:3000’
+	4.1. Navigate to client folder
+	4.2. Type ‘npm install’ in command line
+	4.3. On completion, type ‘npm run start’
+	4.4. Check if browser opens up new page, if not type url ‘http://localhost:3000’
 5. Server Side
-	1. Create new Terminal command line type ‘Cmd + T’
-	2. Navigate into Server/src folder
-	3. Type ‘idea . ’(which will open up the source code in Intelli J)
-	4. Run the application ‘DrumandDrumberDbApplication’
-	5. Check if browser opens up new page, if not type url http://localhost8080/
+	5.1. Create new Terminal command line type ‘Cmd + T’
+	5.2. Navigate into Server/src folder
+	5.3. Type ‘idea . ’(which will open up the source code in Intelli J)
+	5.4. Run the application ‘DrumandDrumberDbApplication’
+	5.5. Check if browser opens up new page, if not type url http://localhost8080/
 6. Enjoy creating some beats!
 
 ## INSTRUCTIONS TO PLAY
