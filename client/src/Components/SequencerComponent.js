@@ -15,22 +15,7 @@ class SequencerContainer extends Component{
       savedPattern: []
     }
 
-    this.activateButton1 = this.activateButton1.bind(this);
-    this.activateButton2 = this.activateButton2.bind(this);
-    this.activateButton3 = this.activateButton3.bind(this);
-    this.activateButton4 = this.activateButton4.bind(this);
-    this.activateButton5 = this.activateButton5.bind(this);
-    this.activateButton6 = this.activateButton6.bind(this);
-    this.activateButton7 = this.activateButton7.bind(this);
-    this.activateButton8 = this.activateButton8.bind(this);
-    this.activateButton9 = this.activateButton9.bind(this);
-    this.activateButton10 = this.activateButton10.bind(this);
-    this.activateButton11 = this.activateButton11.bind(this);
-    this.activateButton12 = this.activateButton12.bind(this);
-    this.activateButton13 = this.activateButton13.bind(this);
-    this.activateButton14 = this.activateButton14.bind(this);
-    this.activateButton15 = this.activateButton15.bind(this);
-    this.activateButton16 = this.activateButton16.bind(this);
+    this.activateButton = this.activateButton.bind(this);
 
     this.savePattern = this.savePattern.bind(this);
     this.clearAll = this.clearAll.bind(this);
@@ -68,211 +53,16 @@ class SequencerContainer extends Component{
     this.timer = null;
   }
 
-  activateButton1(){
+  activateButton(index){
     let pattern = [...this.state.pattern];
-    let button = pattern[0];
+    let button = pattern[index];
     if (button === 0){
       button = 1;
     }
     else {
       button = 0
     }
-    pattern[0] = button;
-    this.setState({pattern});
-  }
-
-  activateButton2(){
-    let pattern = [...this.state.pattern];
-    let button = pattern[1];
-    if (button === 0){
-      button = 1;
-    }
-    else {
-      button = 0
-    }
-    pattern[1] = button;
-    this.setState({pattern});
-  }
-
-  activateButton3(){
-    let pattern = [...this.state.pattern];
-    let button = pattern[2];
-    if (button === 0){
-      button = 1;
-    }
-    else {
-      button = 0
-    }
-    pattern[2] = button;
-    this.setState({pattern});
-  }
-
-  activateButton4(){
-    let pattern = [...this.state.pattern];
-    let button = pattern[3];
-    if (button === 0){
-      button = 1;
-    }
-    else {
-      button = 0
-    }
-    pattern[3] = button;
-    this.setState({pattern});
-  }
-
-  activateButton5(){
-    let pattern = [...this.state.pattern];
-    let button = pattern[4];
-    if (button === 0){
-      button = 1;
-    }
-    else {
-      button = 0
-    }
-    pattern[4] = button;
-    this.setState({pattern});
-  }
-
-  activateButton6(){
-    let pattern = [...this.state.pattern];
-    let button = pattern[5];
-    if (button === 0){
-      button = 1;
-    }
-    else {
-      button = 0
-    }
-    pattern[5] = button;
-    this.setState({pattern});
-  }
-
-  activateButton7(){
-    let pattern = [...this.state.pattern];
-    let button = pattern[6];
-    if (button === 0){
-      button = 1;
-    }
-    else {
-      button = 0
-    }
-    pattern[6] = button;
-    this.setState({pattern});
-  }
-
-  activateButton8(){
-    let pattern = [...this.state.pattern];
-    let button = pattern[7];
-    if (button === 0){
-      button = 1;
-    }
-    else {
-      button = 0
-    }
-    pattern[7] = button;
-    this.setState({pattern});
-  }
-
-  activateButton9(){
-    let pattern = [...this.state.pattern];
-    let button = pattern[8];
-    if (button === 0){
-      button = 1;
-    }
-    else {
-      button = 0
-    }
-    pattern[8] = button;
-    this.setState({pattern});
-  }
-
-  activateButton10(){
-    let pattern = [...this.state.pattern];
-    let button = pattern[9];
-    if (button === 0){
-      button = 1;
-    }
-    else {
-      button = 0
-    }
-    pattern[9] = button;
-    this.setState({pattern});
-  }
-
-  activateButton11(){
-    let pattern = [...this.state.pattern];
-    let button = pattern[10];
-    if (button === 0){
-      button = 1;
-    }
-    else {
-      button = 0
-    }
-    pattern[10] = button;
-    this.setState({pattern});
-  }
-
-  activateButton12(){
-    let pattern = [...this.state.pattern];
-    let button = pattern[11];
-    if (button === 0){
-      button = 1;
-    }
-    else {
-      button = 0
-    }
-    pattern[11] = button;
-    this.setState({pattern});
-  }
-
-  activateButton13(){
-    let pattern = [...this.state.pattern];
-    let button = pattern[12];
-    if (button === 0){
-      button = 1;
-    }
-    else {
-      button = 0
-    }
-    pattern[12] = button;
-    this.setState({pattern});
-  }
-
-  activateButton14(){
-    let pattern = [...this.state.pattern];
-    let button = pattern[13];
-    if (button === 0){
-      button = 1;
-    }
-    else {
-      button = 0
-    }
-    pattern[13] = button;
-    this.setState({pattern});
-  }
-
-  activateButton15(){
-    let pattern = [...this.state.pattern];
-    let button = pattern[14];
-    if (button === 0){
-      button = 1;
-    }
-    else {
-      button = 0
-    }
-    pattern[14] = button;
-    this.setState({pattern});
-  }
-
-  activateButton16(){
-    let pattern = [...this.state.pattern];
-    let button = pattern[15];
-    if (button === 0){
-      button = 1;
-    }
-    else {
-      button = 0
-    }
-    pattern[15] = button;
+    pattern[index] = button;
     this.setState({pattern});
   }
 
@@ -318,22 +108,22 @@ class SequencerContainer extends Component{
       <div className={this.props.selected ? "show-sequencer" : "hide-sequencer"}>
 
         <div className="sequencer">
-          <button className={this.state.pattern[0] === 1 ? "button-on" : "button-off"} onClick={this.activateButton1}></button>
-          <button className={this.state.pattern[1] === 1 ? "button-on" : "button-off"} onClick={this.activateButton2}></button>
-          <button className={this.state.pattern[2] === 1 ? "button-on" : "button-off"} onClick={this.activateButton3}></button>
-          <button className={this.state.pattern[3] === 1 ? "button-on" : "button-off"} onClick={this.activateButton4}></button>
-          <button className={this.state.pattern[4] === 1 ? "button-on" : "button-off"} onClick={this.activateButton5}></button>
-          <button className={this.state.pattern[5] === 1 ? "button-on" : "button-off"} onClick={this.activateButton6}></button>
-          <button className={this.state.pattern[6] === 1 ? "button-on" : "button-off"} onClick={this.activateButton7}></button>
-          <button className={this.state.pattern[7] === 1 ? "button-on" : "button-off"} onClick={this.activateButton8}></button>
-          <button className={this.state.pattern[8] === 1 ? "button-on" : "button-off"} onClick={this.activateButton9}></button>
-          <button className={this.state.pattern[9] === 1 ? "button-on" : "button-off"} onClick={this.activateButton10}></button>
-          <button className={this.state.pattern[10] === 1 ? "button-on" : "button-off"} onClick={this.activateButton11}></button>
-          <button className={this.state.pattern[11] === 1 ? "button-on" : "button-off"} onClick={this.activateButton12}></button>
-          <button className={this.state.pattern[12] === 1 ? "button-on" : "button-off"} onClick={this.activateButton13}></button>
-          <button className={this.state.pattern[13] === 1 ? "button-on" : "button-off"} onClick={this.activateButton14}></button>
-          <button className={this.state.pattern[14] === 1 ? "button-on" : "button-off"} onClick={this.activateButton15}></button>
-          <button className={this.state.pattern[15] === 1 ? "button-on" : "button-off"} onClick={this.activateButton16}></button>
+          <button className={this.state.pattern[0] === 1 ? "button-on" : "button-off"} onClick={() => this.activateButton(0)}></button>
+          <button className={this.state.pattern[1] === 1 ? "button-on" : "button-off"} onClick={() => this.activateButton(1)}></button>
+          <button className={this.state.pattern[2] === 1 ? "button-on" : "button-off"} onClick={() => this.activateButton(2)}></button>
+          <button className={this.state.pattern[3] === 1 ? "button-on" : "button-off"} onClick={() => this.activateButton(3)}></button>
+          <button className={this.state.pattern[4] === 1 ? "button-on" : "button-off"} onClick={() => this.activateButton(4)}></button>
+          <button className={this.state.pattern[5] === 1 ? "button-on" : "button-off"} onClick={() => this.activateButton(5)}></button>
+          <button className={this.state.pattern[6] === 1 ? "button-on" : "button-off"} onClick={() => this.activateButton(6)}></button>
+          <button className={this.state.pattern[7] === 1 ? "button-on" : "button-off"} onClick={() => this.activateButton(7)}></button>
+          <button className={this.state.pattern[8] === 1 ? "button-on" : "button-off"} onClick={() => this.activateButton(8)}></button>
+          <button className={this.state.pattern[9] === 1 ? "button-on" : "button-off"} onClick={() => this.activateButton(9)}></button>
+          <button className={this.state.pattern[10] === 1 ? "button-on" : "button-off"} onClick={() => this.activateButton(10)}></button>
+          <button className={this.state.pattern[11] === 1 ? "button-on" : "button-off"} onClick={() => this.activateButton(11)}></button>
+          <button className={this.state.pattern[12] === 1 ? "button-on" : "button-off"} onClick={() => this.activateButton(12)}></button>
+          <button className={this.state.pattern[13] === 1 ? "button-on" : "button-off"} onClick={() => this.activateButton(13)}></button>
+          <button className={this.state.pattern[14] === 1 ? "button-on" : "button-off"} onClick={() => this.activateButton(14)}></button>
+          <button className={this.state.pattern[15] === 1 ? "button-on" : "button-off"} onClick={() => this.activateButton(15)}></button>
           <img alt="Save" src={saveIcon} className="save-icon"
             onClick = {this.savePattern}/>
           <img alt="Clear" src={clearIcon} className="clear-icon" onClick={this.clearAll}/>
