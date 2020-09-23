@@ -242,9 +242,9 @@ class DrumMachineContainer extends Component{
               <div className="content">
               <h4>INSTRUCTIONS</h4>
                 <ul>
-                  <li>Click the drum pads on the left to hear each sound.</li>
-                  <li>Click on the square sequencer buttons to draw in notes in the sequence.</li>
-                  <li>The 16 sequencer tracks represent 2 bars of 4 beats each. (4/4 time signature)</li>
+                  <li>Click the drum pads on the left to trigger a sound.</li>
+                  <li>Click on the square sequencer buttons to draw notes in the sequence.</li>
+                  <li>The 16 sequencer tracks represent the 16th notes of one bar. (4/4 time signature)</li>
                   <li>Click Play to...well, play! Click again to stop.</li>
                   <li>The BPM slider in the middle changes the speed of the track. Must stop track to change!</li>
                   <li>The three disk icon saves all your tracks - but save each track individually before saving all!</li>
