@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import DrumMachineComponent from '../Components/DrumMachineComponent';
 import './DrumMachineContainer.css'
 import Request from '../Helpers/request'
+import Dropdown from 'react-bootstrap/Dropdown'
 
 import clap from '../Public/Clap.wav';
 import clave from '../Public/Clave.wav';
@@ -207,11 +208,10 @@ class DrumMachineContainer extends Component{
 
       <div className="controls">
 
-        <div className="dropdown">
         <div className="control-elements">
 
         <img alt="drum and drummer g19" className="logo" src={logo} />
-        
+
         <img alt="Play" className="StartButton" src={this.state.playing ? stopIcon : playIcon} onClick={() => {
           if (this.state.playing) this.stopSequence()
           else this.startSequence()
@@ -229,12 +229,35 @@ class DrumMachineContainer extends Component{
         </span>
 
         <img className="SaveAllButton" src={saveAll} alt="save-all" onClick={this.handleSaveAll}/>
-          <img className="drop-button" src={menu} alt="instructions"/>
-          <div className="drop-content">
 
+        <div className="dropdown">
+          <Dropdown>
+            <Dropdown.Toggle>
+              <img className="drop-button" src={menu} alt="instructions"/>
+            </Dropdown.Toggle>
+
+            <div className="drop-menu">
+            <Dropdown.Menu>
+              <Dropdown.ItemText>
+              <div className="content">
+              <h4>INSTRUCTIONS</h4>
+                <ul>
+                  <li>Click the drum pads on the left to trigger a sound.</li>
+                  <li>Click on the square sequencer buttons to draw notes in the sequence.</li>
+                  <li>The 16 sequencer tracks represent the 16th notes of one bar. (4/4 time signature)</li>
+                  <li>Click Play to...well, play! Click again to stop.</li>
+                  <li>The BPM slider in the middle changes the speed of the track. Must stop track to change!</li>
+                  <li>The three disk icon saves all your tracks - but save each track individually before saving all!</li>
+                  <li>If you want to start again, click the red X to clear a track.</li>
+                </ul>
+                  <h4>Get busy with the beats!</h4>
+              </div>
+              </Dropdown.ItemText>
+            </Dropdown.Menu>
+            </div>
+          </Dropdown>
           </div>
         </div>
-      </div>
       </div>
 
 
@@ -256,18 +279,6 @@ class DrumMachineContainer extends Component{
         <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.highConga} playSound={this.playSound} name={"highConga"}/>
         <DrumMachineComponent save={this.handleSave} bpm={this.state.bpm} playing={this.state.playing} sound={this.state.shaker} playSound={this.playSound} name={"shaker"}/>
 
-        </div>
-
-        <div className="instructions">
-        <h2>Drum Machine Instructions</h2>
-          <p>Click the drum pads on the left to hear each sound.</p>
-          <p>Click on the square sequencer buttons to draw in notes in the sequence.</p>
-          <p>The 16 sequencer tracks represent 2 bars of 4 beats each. (4/4 time signature)</p>
-          <p>Click Play to...well, play! Click again to stop.</p>
-          <p>The BPM slider in the middle changes the speed of the track. Must stop track to change!</p>
-          <p>The three disk icon saves all your tracks - but save each track individually before saving all!</p>
-          <p>If you want to start again, click the red X to clear a track.</p>
-          <h2>Get busy with the beats!</h2>
         </div>
 
       </div>

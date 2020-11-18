@@ -43,7 +43,7 @@ class SequencerContainer extends Component{
           step++;
           step %= numSteps;
         },
-        (60000 / this.props.bpm) / 2
+        (60000 / this.props.bpm) / 4
       );
     }
   }
